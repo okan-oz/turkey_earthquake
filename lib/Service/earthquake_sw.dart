@@ -1,30 +1,29 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:http/http.dart' as http;
 import 'package:turkey_earthquake/models/earthquake.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:turkey_earthquake/models/eqresponse.dart';
+import '../logger.dart';
 
 class EarthQuakeService {
-  static final String eqApiUrl =
-      "https://api.orhanaydogdu.com.tr/deprem/live.php";
+  static final String _eqApiUrl =
+      "https://api.orhanaydogdu.com.tr/deprem/live.php1";
+
+  static int _timeout=10;
   static Future<List<EarthQuake>> GetEQList() async {
-    EqResponse eqResponse=EqResponse();
+    EqResponse eqResponse = EqResponse();
     try {
-      var sr = await http.get(eqApiUrl).timeout(Duration(seconds: 10));
+      var sr = await http.get(_eqApiUrl).timeout(Duration(seconds: _timeout));
       if (sr.statusCode == 200) {
-          eqResponse = EqResponse.fromJson(json.decode(sr.body));
+        eqResponse = EqResponse.fromJson(json.decode(sr.body));
         return eqResponse.result;
       } else {
         throw Exception("Baglanamadık ${sr.statusCode}");
       }
     } catch (e, s) {
-      Crashlytics.instance.recordError(e, s,
-          context:
-              'Exception occured when tring to get earthquake data from api.');
-
-          //Crashlytics.instance.crash();
-        throw e;
+      Logger.recordError(e, s,
+          "Exception occured when tring to get earthquake data from api.");
+      throw e;
     }
   }
 }
