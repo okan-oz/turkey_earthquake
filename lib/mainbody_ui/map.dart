@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:turkey_earthquake/mainbody_ui/earthquakelist.dart';
 import 'package:turkey_earthquake/models/earthquake.dart';
 
 class MapSample extends StatefulWidget {
@@ -25,22 +23,6 @@ class MapSampleState extends State<MapSample> {
   CameraPosition _initialPosition =
       CameraPosition(target: LatLng(38.4315, 39.1505));
 MapType _defaultMapType = MapType.hybrid;
-
-void _onAddMarkerButtonPressed() {
-    setState(() {
-      _markers.add(Marker(
-        // This marker id can be anything that uniquely identifies each marker.
-        markerId: MarkerId(_lastMapPosition.toString()),
-        position: _lastMapPosition,
-        infoWindow: InfoWindow(
-          title: 'Really cool place',
-          snippet: '5 Star Rating',
-        ),
-        icon: BitmapDescriptor.defaultMarker,
-      ));
-    });
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +64,18 @@ void _changeMapType() {
     });
   }
 
+
+
   Future<void> _goToEarthQuake() async {
     double lat = widget.eq.lat;
     double long = widget.eq.lng;
+  
+
+//BitmapDescriptor customIcon;
+
+ 
+
+
     GoogleMapController controller = await _controller.future;
     controller
         .animateCamera(CameraUpdate.newLatLngZoom(LatLng(lat, long), _zoom));
@@ -94,6 +85,8 @@ void _changeMapType() {
           markerId: MarkerId(widget.eq.lokasyon),
           position: LatLng(lat, long),
           infoWindow: InfoWindow(title: widget.eq.mag.toString(),snippet: widget.eq.lokasyon),
+          //icon: BitmapDescriptor.fromAsset("assets/depremAppBar.jpg",),
+        
       
         ),
       );

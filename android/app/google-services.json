@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "445335857309",
+    "firebase_url": "https://turkey-earthquake.firebaseio.com",
+    "project_id": "turkey-earthquake",
+    "storage_bucket": "turkey-earthquake.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445335857309:android:041820a6884c945b1d4c74",
+        "android_client_info": {
+          "package_name": "com.example.turkey_earthquake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445335857309-if9s63tv670o6bocsab1gq0dj3c5t39m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbxmZv2GHAemy0qxN-aQ434k4bFXvtyeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445335857309-if9s63tv670o6bocsab1gq0dj3c5t39m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

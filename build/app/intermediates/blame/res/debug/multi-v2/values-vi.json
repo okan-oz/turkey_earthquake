@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/okanoz/Documents/Projects/turkey_earthquake/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "/Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
-                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/247a47d320707d35b37849f25b180d44/jetified-play-services-basement-16.0.1/res/values-vi/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "194",
-                        "endOffsets": "441"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1285",
-                        "endColumns": "194",
-                        "endOffsets": "1475"
-                    }
-                },
-                {
-                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/ffd10a54e81f35cf02ffb93393973583/jetified-play-services-base-16.0.1/res/values-vi/values.xml",
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/a9ad6b68ab8daa78f9f09b38922f60b8/play-services-base-17.0.0/res/values-vi/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/values-vi/values-vi.xml",
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/6656f0bf84eb856e83b124fd154acf47/core-1.1.0/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2852",
                         "endColumns": "100",
                         "endOffsets": "2948"
+                    }
+                },
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/4a39b5e0414c0adc6116fc2125d57e3d/jetified-play-services-basement-17.0.0/res/values-vi/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "194",
+                        "endOffsets": "441"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1285",
+                        "endColumns": "194",
+                        "endOffsets": "1475"
                     }
                 }
             ]

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turkey_earthquake/models/earthquake.dart';
+
 
 class Utils
 {

@@ -10,6 +10,7 @@ package com.example.turkey_earthquake;
 public final class R {
   public static final class attr {
     /**
+     * Alpha multiplier applied to the base color.
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
     public static final int alpha=0x7f010000;
@@ -86,44 +87,61 @@ public final class R {
      */
     public static final int colorScheme=0x7f01000b;
     /**
+     * The reference to the font file to be used. This should be a file in the res/font folder
+     * and should therefore have an R reference value. E.g. @font/myfont
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int coordinatorLayoutStyle=0x7f01000c;
+    public static final int font=0x7f01000c;
     /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     */
-    public static final int font=0x7f01000d;
-    /**
+     * The authority of the Font Provider to be used for the request.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderAuthority=0x7f01000e;
+    public static final int fontProviderAuthority=0x7f01000d;
     /**
+     * The sets of hashes for the certificates the provider should be signed with. This is
+     * used to verify the identity of the provider, and is only required if the provider is not
+     * part of the system image. This value may point to one list or a list of lists, where each
+     * individual list represents one collection of signature hashes. Refer to your font provider's
+     * documentation for these values.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int fontProviderCerts=0x7f01000f;
+    public static final int fontProviderCerts=0x7f01000e;
     /**
+     * The strategy to be used when fetching font data from a font provider in XML layouts.
+     * This attribute is ignored when the resource is loaded from code, as it is equivalent to the
+     * choice of API between {@link
+     * androidx.core.content.res.ResourcesCompat#getFont(Context, int)} (blocking) and
+     * {@link
+     * androidx.core.content.res.ResourcesCompat#getFont(Context, int, FontCallback, Handler)}
+     * (async).
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>async</td><td>1</td><td></td></tr>
-     * <tr><td>blocking</td><td>0</td><td></td></tr>
+     * <tr><td>async</td><td>1</td><td>The async font fetch works as follows.
+     * First, check the local cache, then if the requeted font is not cached, trigger a
+     * request the font and continue with layout inflation. Once the font fetch succeeds, the
+     * target text view will be refreshed with the downloaded font data. The
+     * fontProviderFetchTimeout will be ignored if async loading is specified.</td></tr>
+     * <tr><td>blocking</td><td>0</td><td>The blocking font fetch works as follows.
+     * First, check the local cache, then if the requested font is not cached, request the
+     * font from the provider and wait until it is finished.  You can change the length of
+     * the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
+     * default typeface will be used instead.</td></tr>
      * </table>
      */
-    public static final int fontProviderFetchStrategy=0x7f010010;
+    public static final int fontProviderFetchStrategy=0x7f01000f;
     /**
+     * The length of the timeout during fetching.
      * <p>May be an integer value, such as "<code>100</code>".
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -131,21 +149,29 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>forever</td><td>ffffffff</td><td></td></tr>
+     * <tr><td>forever</td><td>ffffffff</td><td>A special value for the timeout. In this case, the blocking font fetching will not
+     * timeout and wait until a reply is received from the font provider.</td></tr>
      * </table>
      */
-    public static final int fontProviderFetchTimeout=0x7f010011;
+    public static final int fontProviderFetchTimeout=0x7f010010;
     /**
+     * The package for the Font Provider to be used for the request. This is used to verify
+     * the identity of the provider.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderPackage=0x7f010012;
+    public static final int fontProviderPackage=0x7f010011;
     /**
+     * The query to be sent over to the provider. Refer to your font provider's documentation
+     * on the format of this string.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderQuery=0x7f010013;
+    public static final int fontProviderQuery=0x7f010012;
     /**
+     * The style of the given font file. This will be used when the font is being loaded into
+     * the font stack and will override any style information in the font's header tables. If
+     * unspecified, the value in the font's header tables will be used.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -156,20 +182,29 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int fontStyle=0x7f010014;
+    public static final int fontStyle=0x7f010013;
     /**
+     * The variation settings to be applied to the font. The string should be in the following
+     * format: "'tag1' value1, 'tag2' value2, ...". If the default variation settings should be
+     * used, or the font used does not support variation settings, this attribute needs not be
+     * specified.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontVariationSettings=0x7f010015;
+    public static final int fontVariationSettings=0x7f010014;
     /**
+     * The weight of the given font file. This will be used when the font is being loaded into
+     * the font stack and will override any weight information in the font's header tables. Must
+     * be a positive number, a multiple of 100, and between 100 and 900, inclusive. The most
+     * common values are 400 for regular weight and 700 for bold weight. If unspecified, the value
+     * in the font's header tables will be used.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int fontWeight=0x7f010016;
+    public static final int fontWeight=0x7f010015;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int imageAspectRatio=0x7f010017;
+    public static final int imageAspectRatio=0x7f010016;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -182,110 +217,28 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int imageAspectRatioAdjust=0x7f010018;
-    /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     */
-    public static final int keylines=0x7f010019;
+    public static final int imageAspectRatioAdjust=0x7f010017;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsNorthEastLatitude=0x7f01001a;
+    public static final int latLngBoundsNorthEastLatitude=0x7f010018;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsNorthEastLongitude=0x7f01001b;
+    public static final int latLngBoundsNorthEastLongitude=0x7f010019;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsSouthWestLatitude=0x7f01001c;
+    public static final int latLngBoundsSouthWestLatitude=0x7f01001a;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsSouthWestLongitude=0x7f01001d;
-    /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     */
-    public static final int layout_anchor=0x7f01001e;
-    /**
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>center</td><td>11</td><td></td></tr>
-     * <tr><td>center_horizontal</td><td>1</td><td></td></tr>
-     * <tr><td>center_vertical</td><td>10</td><td></td></tr>
-     * <tr><td>clip_horizontal</td><td>8</td><td></td></tr>
-     * <tr><td>clip_vertical</td><td>80</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>fill</td><td>77</td><td></td></tr>
-     * <tr><td>fill_horizontal</td><td>7</td><td></td></tr>
-     * <tr><td>fill_vertical</td><td>70</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     */
-    public static final int layout_anchorGravity=0x7f01001f;
-    /**
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     */
-    public static final int layout_behavior=0x7f010020;
-    /**
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>all</td><td>77</td><td></td></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     */
-    public static final int layout_dodgeInsetEdges=0x7f010021;
-    /**
-     * <p>Must be one of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     */
-    public static final int layout_insetEdge=0x7f010022;
-    /**
-     * <p>May be an integer value, such as "<code>100</code>".
-     */
-    public static final int layout_keyline=0x7f010023;
+    public static final int latLngBoundsSouthWestLongitude=0x7f01001b;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int liteMode=0x7f010024;
+    public static final int liteMode=0x7f01001c;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -300,7 +253,7 @@ public final class R {
      * <tr><td>terrain</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int mapType=0x7f010025;
+    public static final int mapType=0x7f01001d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -309,71 +262,63 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int scopeUris=0x7f010026;
+    public static final int scopeUris=0x7f01001e;
     /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     */
-    public static final int statusBarBackground=0x7f010027;
-    /**
+     * The index of the font in the tcc font file. If the font file referenced is not in the
+     * tcc format, this attribute needs not be specified.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int ttcIndex=0x7f010028;
+    public static final int ttcIndex=0x7f01001f;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiCompass=0x7f010029;
+    public static final int uiCompass=0x7f010020;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiMapToolbar=0x7f01002a;
+    public static final int uiMapToolbar=0x7f010021;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiRotateGestures=0x7f01002b;
+    public static final int uiRotateGestures=0x7f010022;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiScrollGestures=0x7f01002c;
+    public static final int uiScrollGestures=0x7f010023;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiScrollGesturesDuringRotateOrZoom=0x7f01002d;
+    public static final int uiScrollGesturesDuringRotateOrZoom=0x7f010024;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiTiltGestures=0x7f01002e;
+    public static final int uiTiltGestures=0x7f010025;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiZoomControls=0x7f01002f;
+    public static final int uiZoomControls=0x7f010026;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiZoomGestures=0x7f010030;
+    public static final int uiZoomGestures=0x7f010027;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int useViewLifecycle=0x7f010031;
+    public static final int useViewLifecycle=0x7f010028;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int zOrderOnTop=0x7f010032;
+    public static final int zOrderOnTop=0x7f010029;
   }
   public static final class color {
     public static final int common_google_signin_btn_text_dark=0x7f020000;
@@ -389,11 +334,8 @@ public final class R {
     public static final int common_google_signin_btn_tint=0x7f02000a;
     public static final int notification_action_color_filter=0x7f02000b;
     public static final int notification_icon_bg_color=0x7f02000c;
-    public static final int notification_material_background_media_default_color=0x7f02000d;
-    public static final int primary_text_default_material_dark=0x7f02000e;
-    public static final int ripple_material_light=0x7f02000f;
-    public static final int secondary_text_default_material_dark=0x7f020010;
-    public static final int secondary_text_default_material_light=0x7f020011;
+    public static final int ripple_material_light=0x7f02000d;
+    public static final int secondary_text_default_material_light=0x7f02000e;
   }
   public static final class dimen {
     public static final int compat_button_inset_horizontal_material=0x7f030000;
@@ -418,10 +360,6 @@ public final class R {
     public static final int notification_subtext_size=0x7f030013;
     public static final int notification_top_pad=0x7f030014;
     public static final int notification_top_pad_large_text=0x7f030015;
-    public static final int subtitle_corner_radius=0x7f030016;
-    public static final int subtitle_outline_width=0x7f030017;
-    public static final int subtitle_shadow_offset=0x7f030018;
-    public static final int subtitle_shadow_radius=0x7f030019;
   }
   public static final class drawable {
     public static final int common_full_open_on_phone=0x7f040000;
@@ -460,128 +398,141 @@ public final class R {
     public static final int notify_panel_notification_icon_bg=0x7f040021;
   }
   public static final class id {
-    public static final int action0=0x7f050000;
-    public static final int action_container=0x7f050001;
-    public static final int action_divider=0x7f050002;
-    public static final int action_image=0x7f050003;
-    public static final int action_text=0x7f050004;
-    public static final int actions=0x7f050005;
-    public static final int adjust_height=0x7f050006;
-    public static final int adjust_width=0x7f050007;
-    public static final int all=0x7f050008;
-    public static final int async=0x7f050009;
-    public static final int auto=0x7f05000a;
-    public static final int blocking=0x7f05000b;
-    public static final int bottom=0x7f05000c;
-    public static final int cancel_action=0x7f05000d;
-    public static final int center=0x7f05000e;
-    public static final int center_horizontal=0x7f05000f;
-    public static final int center_vertical=0x7f050010;
-    public static final int chronometer=0x7f050011;
-    public static final int clip_horizontal=0x7f050012;
-    public static final int clip_vertical=0x7f050013;
-    public static final int dark=0x7f050014;
-    public static final int end=0x7f050015;
-    public static final int end_padder=0x7f050016;
-    public static final int fill=0x7f050017;
-    public static final int fill_horizontal=0x7f050018;
-    public static final int fill_vertical=0x7f050019;
-    public static final int forever=0x7f05001a;
-    public static final int hybrid=0x7f05001b;
-    public static final int icon=0x7f05001c;
-    public static final int icon_group=0x7f05001d;
-    public static final int icon_only=0x7f05001e;
-    public static final int info=0x7f05001f;
-    public static final int italic=0x7f050020;
-    public static final int left=0x7f050021;
-    public static final int light=0x7f050022;
-    public static final int line1=0x7f050023;
-    public static final int line3=0x7f050024;
-    public static final int media_actions=0x7f050025;
-    public static final int none=0x7f050026;
-    public static final int normal=0x7f050027;
-    public static final int notification_background=0x7f050028;
-    public static final int notification_main_column=0x7f050029;
-    public static final int notification_main_column_container=0x7f05002a;
-    public static final int right=0x7f05002b;
-    public static final int right_icon=0x7f05002c;
-    public static final int right_side=0x7f05002d;
-    public static final int satellite=0x7f05002e;
-    public static final int standard=0x7f05002f;
-    public static final int start=0x7f050030;
-    public static final int status_bar_latest_event_content=0x7f050031;
-    public static final int tag_transition_group=0x7f050032;
-    public static final int tag_unhandled_key_event_manager=0x7f050033;
-    public static final int tag_unhandled_key_listeners=0x7f050034;
-    public static final int terrain=0x7f050035;
-    public static final int text=0x7f050036;
-    public static final int text2=0x7f050037;
-    public static final int time=0x7f050038;
-    public static final int title=0x7f050039;
-    public static final int top=0x7f05003a;
-    public static final int wide=0x7f05003b;
+    public static final int accessibility_action_clickable_span=0x7f050000;
+    public static final int accessibility_custom_action_0=0x7f050001;
+    public static final int accessibility_custom_action_1=0x7f050002;
+    public static final int accessibility_custom_action_10=0x7f050003;
+    public static final int accessibility_custom_action_11=0x7f050004;
+    public static final int accessibility_custom_action_12=0x7f050005;
+    public static final int accessibility_custom_action_13=0x7f050006;
+    public static final int accessibility_custom_action_14=0x7f050007;
+    public static final int accessibility_custom_action_15=0x7f050008;
+    public static final int accessibility_custom_action_16=0x7f050009;
+    public static final int accessibility_custom_action_17=0x7f05000a;
+    public static final int accessibility_custom_action_18=0x7f05000b;
+    public static final int accessibility_custom_action_19=0x7f05000c;
+    public static final int accessibility_custom_action_2=0x7f05000d;
+    public static final int accessibility_custom_action_20=0x7f05000e;
+    public static final int accessibility_custom_action_21=0x7f05000f;
+    public static final int accessibility_custom_action_22=0x7f050010;
+    public static final int accessibility_custom_action_23=0x7f050011;
+    public static final int accessibility_custom_action_24=0x7f050012;
+    public static final int accessibility_custom_action_25=0x7f050013;
+    public static final int accessibility_custom_action_26=0x7f050014;
+    public static final int accessibility_custom_action_27=0x7f050015;
+    public static final int accessibility_custom_action_28=0x7f050016;
+    public static final int accessibility_custom_action_29=0x7f050017;
+    public static final int accessibility_custom_action_3=0x7f050018;
+    public static final int accessibility_custom_action_30=0x7f050019;
+    public static final int accessibility_custom_action_31=0x7f05001a;
+    public static final int accessibility_custom_action_4=0x7f05001b;
+    public static final int accessibility_custom_action_5=0x7f05001c;
+    public static final int accessibility_custom_action_6=0x7f05001d;
+    public static final int accessibility_custom_action_7=0x7f05001e;
+    public static final int accessibility_custom_action_8=0x7f05001f;
+    public static final int accessibility_custom_action_9=0x7f050020;
+    public static final int action_container=0x7f050021;
+    public static final int action_divider=0x7f050022;
+    public static final int action_image=0x7f050023;
+    public static final int action_text=0x7f050024;
+    public static final int actions=0x7f050025;
+    public static final int adjust_height=0x7f050026;
+    public static final int adjust_width=0x7f050027;
+    public static final int async=0x7f050028;
+    public static final int auto=0x7f050029;
+    public static final int blocking=0x7f05002a;
+    public static final int chronometer=0x7f05002b;
+    public static final int dark=0x7f05002c;
+    public static final int dialog_button=0x7f05002d;
+    public static final int forever=0x7f05002e;
+    public static final int hybrid=0x7f05002f;
+    public static final int icon=0x7f050030;
+    public static final int icon_group=0x7f050031;
+    public static final int icon_only=0x7f050032;
+    public static final int info=0x7f050033;
+    public static final int italic=0x7f050034;
+    public static final int light=0x7f050035;
+    public static final int line1=0x7f050036;
+    public static final int line3=0x7f050037;
+    public static final int none=0x7f050038;
+    public static final int normal=0x7f050039;
+    public static final int notification_background=0x7f05003a;
+    public static final int notification_main_column=0x7f05003b;
+    public static final int notification_main_column_container=0x7f05003c;
+    public static final int right_icon=0x7f05003d;
+    public static final int right_side=0x7f05003e;
+    public static final int satellite=0x7f05003f;
+    public static final int standard=0x7f050040;
+    public static final int tag_accessibility_actions=0x7f050041;
+    public static final int tag_accessibility_clickable_spans=0x7f050042;
+    public static final int tag_accessibility_heading=0x7f050043;
+    public static final int tag_accessibility_pane_title=0x7f050044;
+    public static final int tag_screen_reader_focusable=0x7f050045;
+    public static final int tag_transition_group=0x7f050046;
+    public static final int tag_unhandled_key_event_manager=0x7f050047;
+    public static final int tag_unhandled_key_listeners=0x7f050048;
+    public static final int terrain=0x7f050049;
+    public static final int text=0x7f05004a;
+    public static final int text2=0x7f05004b;
+    public static final int time=0x7f05004c;
+    public static final int title=0x7f05004d;
+    public static final int wide=0x7f05004e;
   }
   public static final class integer {
-    public static final int cancel_button_image_alpha=0x7f060000;
-    public static final int google_play_services_version=0x7f060001;
-    public static final int status_bar_notification_info_maxnum=0x7f060002;
+    public static final int google_play_services_version=0x7f060000;
+    public static final int status_bar_notification_info_maxnum=0x7f060001;
   }
   public static final class layout {
-    public static final int notification_action=0x7f070000;
-    public static final int notification_action_tombstone=0x7f070001;
-    public static final int notification_media_action=0x7f070002;
-    public static final int notification_media_cancel_action=0x7f070003;
-    public static final int notification_template_big_media=0x7f070004;
-    public static final int notification_template_big_media_custom=0x7f070005;
-    public static final int notification_template_big_media_narrow=0x7f070006;
-    public static final int notification_template_big_media_narrow_custom=0x7f070007;
-    public static final int notification_template_custom_big=0x7f070008;
-    public static final int notification_template_icon_group=0x7f070009;
-    public static final int notification_template_lines_media=0x7f07000a;
-    public static final int notification_template_media=0x7f07000b;
-    public static final int notification_template_media_custom=0x7f07000c;
-    public static final int notification_template_part_chronometer=0x7f07000d;
-    public static final int notification_template_part_time=0x7f07000e;
+    public static final int custom_dialog=0x7f070000;
+    public static final int notification_action=0x7f070001;
+    public static final int notification_action_tombstone=0x7f070002;
+    public static final int notification_template_custom_big=0x7f070003;
+    public static final int notification_template_icon_group=0x7f070004;
+    public static final int notification_template_part_chronometer=0x7f070005;
+    public static final int notification_template_part_time=0x7f070006;
   }
   public static final class mipmap {
     public static final int earthquake_launcher=0x7f080000;
   }
   public static final class string {
-    public static final int common_google_play_services_enable_button=0x7f090000;
-    public static final int common_google_play_services_enable_text=0x7f090001;
-    public static final int common_google_play_services_enable_title=0x7f090002;
-    public static final int common_google_play_services_install_button=0x7f090003;
-    public static final int common_google_play_services_install_text=0x7f090004;
-    public static final int common_google_play_services_install_title=0x7f090005;
-    public static final int common_google_play_services_notification_channel_name=0x7f090006;
-    public static final int common_google_play_services_notification_ticker=0x7f090007;
-    public static final int common_google_play_services_unknown_issue=0x7f090008;
-    public static final int common_google_play_services_unsupported_text=0x7f090009;
-    public static final int common_google_play_services_update_button=0x7f09000a;
-    public static final int common_google_play_services_update_text=0x7f09000b;
-    public static final int common_google_play_services_update_title=0x7f09000c;
-    public static final int common_google_play_services_updating_text=0x7f09000d;
-    public static final int common_google_play_services_wear_update_text=0x7f09000e;
-    public static final int common_open_on_phone=0x7f09000f;
-    public static final int common_signin_button_text=0x7f090010;
-    public static final int common_signin_button_text_long=0x7f090011;
-    public static final int status_bar_notification_info_overflow=0x7f090012;
+    public static final int com_crashlytics_android_build_id=0x7f090000;
+    public static final int common_google_play_services_enable_button=0x7f090001;
+    public static final int common_google_play_services_enable_text=0x7f090002;
+    public static final int common_google_play_services_enable_title=0x7f090003;
+    public static final int common_google_play_services_install_button=0x7f090004;
+    public static final int common_google_play_services_install_text=0x7f090005;
+    public static final int common_google_play_services_install_title=0x7f090006;
+    public static final int common_google_play_services_notification_channel_name=0x7f090007;
+    public static final int common_google_play_services_notification_ticker=0x7f090008;
+    public static final int common_google_play_services_unknown_issue=0x7f090009;
+    public static final int common_google_play_services_unsupported_text=0x7f09000a;
+    public static final int common_google_play_services_update_button=0x7f09000b;
+    public static final int common_google_play_services_update_text=0x7f09000c;
+    public static final int common_google_play_services_update_title=0x7f09000d;
+    public static final int common_google_play_services_updating_text=0x7f09000e;
+    public static final int common_google_play_services_wear_update_text=0x7f09000f;
+    public static final int common_open_on_phone=0x7f090010;
+    public static final int common_signin_button_text=0x7f090011;
+    public static final int common_signin_button_text_long=0x7f090012;
+    public static final int default_web_client_id=0x7f090013;
+    public static final int firebase_database_url=0x7f090014;
+    public static final int gcm_defaultSenderId=0x7f090015;
+    public static final int google_api_key=0x7f090016;
+    public static final int google_app_id=0x7f090017;
+    public static final int google_crash_reporting_api_key=0x7f090018;
+    public static final int google_storage_bucket=0x7f090019;
+    public static final int project_id=0x7f09001a;
+    public static final int status_bar_notification_info_overflow=0x7f09001b;
   }
   public static final class style {
     public static final int LaunchTheme=0x7f0a0000;
     public static final int TextAppearance_Compat_Notification=0x7f0a0001;
     public static final int TextAppearance_Compat_Notification_Info=0x7f0a0002;
-    public static final int TextAppearance_Compat_Notification_Info_Media=0x7f0a0003;
-    public static final int TextAppearance_Compat_Notification_Line2=0x7f0a0004;
-    public static final int TextAppearance_Compat_Notification_Line2_Media=0x7f0a0005;
-    public static final int TextAppearance_Compat_Notification_Media=0x7f0a0006;
-    public static final int TextAppearance_Compat_Notification_Time=0x7f0a0007;
-    public static final int TextAppearance_Compat_Notification_Time_Media=0x7f0a0008;
-    public static final int TextAppearance_Compat_Notification_Title=0x7f0a0009;
-    public static final int TextAppearance_Compat_Notification_Title_Media=0x7f0a000a;
-    public static final int Widget_Compat_NotificationActionContainer=0x7f0a000b;
-    public static final int Widget_Compat_NotificationActionText=0x7f0a000c;
-    public static final int Widget_Support_CoordinatorLayout=0x7f0a000d;
+    public static final int TextAppearance_Compat_Notification_Line2=0x7f0a0003;
+    public static final int TextAppearance_Compat_Notification_Time=0x7f0a0004;
+    public static final int TextAppearance_Compat_Notification_Title=0x7f0a0005;
+    public static final int Widget_Compat_NotificationActionContainer=0x7f0a0006;
+    public static final int Widget_Compat_NotificationActionText=0x7f0a0007;
   }
   public static final class styleable {
     /**
@@ -593,7 +544,7 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_color android:color}</code></td><td></td></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_alpha android:alpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ColorStateListItem_alpha com.example.turkey_earthquake:alpha}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_alpha com.example.turkey_earthquake:alpha}</code></td><td>Alpha multiplier applied to the base color.</td></tr>
      * </table>
      * @see #ColorStateListItem_android_color
      * @see #ColorStateListItem_android_alpha
@@ -603,8 +554,9 @@ public final class R {
       0x010101a5, 0x0101031f, 0x7f010000
     };
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#color}
-     * attribute's value can be found in the {@link #ColorStateListItem} array.
+     * <p>
+     * @attr description
+     * Base color for this state.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -623,8 +575,9 @@ public final class R {
      */
     public static final int ColorStateListItem_android_alpha=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#alpha}
-     * attribute's value can be found in the {@link #ColorStateListItem} array.
+     * <p>
+     * @attr description
+     * Alpha multiplier applied to the base color.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -632,222 +585,18 @@ public final class R {
      */
     public static final int ColorStateListItem_alpha=2;
     /**
-     * Attributes that can be used with a CoordinatorLayout.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_keylines com.example.turkey_earthquake:keylines}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.example.turkey_earthquake:statusBarBackground}</code></td><td></td></tr>
-     * </table>
-     * @see #CoordinatorLayout_keylines
-     * @see #CoordinatorLayout_statusBarBackground
-     */
-    public static final int[] CoordinatorLayout={
-      0x7f010019, 0x7f010027
-    };
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#keylines}
-     * attribute's value can be found in the {@link #CoordinatorLayout} array.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     *
-     * @attr name com.example.turkey_earthquake:keylines
-     */
-    public static final int CoordinatorLayout_keylines=0;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#statusBarBackground}
-     * attribute's value can be found in the {@link #CoordinatorLayout} array.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     *
-     * @attr name com.example.turkey_earthquake:statusBarBackground
-     */
-    public static final int CoordinatorLayout_statusBarBackground=1;
-    /**
-     * Attributes that can be used with a CoordinatorLayout_Layout.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.example.turkey_earthquake:layout_anchor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.example.turkey_earthquake:layout_anchorGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.example.turkey_earthquake:layout_behavior}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.example.turkey_earthquake:layout_dodgeInsetEdges}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.example.turkey_earthquake:layout_insetEdge}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.example.turkey_earthquake:layout_keyline}</code></td><td></td></tr>
-     * </table>
-     * @see #CoordinatorLayout_Layout_android_layout_gravity
-     * @see #CoordinatorLayout_Layout_layout_anchor
-     * @see #CoordinatorLayout_Layout_layout_anchorGravity
-     * @see #CoordinatorLayout_Layout_layout_behavior
-     * @see #CoordinatorLayout_Layout_layout_dodgeInsetEdges
-     * @see #CoordinatorLayout_Layout_layout_insetEdge
-     * @see #CoordinatorLayout_Layout_layout_keyline
-     */
-    public static final int[] CoordinatorLayout_Layout={
-      0x010100b3, 0x7f01001e, 0x7f01001f, 0x7f010020, 
-      0x7f010021, 0x7f010022, 0x7f010023
-    };
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>center</td><td>11</td><td></td></tr>
-     * <tr><td>center_horizontal</td><td>1</td><td></td></tr>
-     * <tr><td>center_vertical</td><td>10</td><td></td></tr>
-     * <tr><td>clip_horizontal</td><td>8</td><td></td></tr>
-     * <tr><td>clip_vertical</td><td>80</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>fill</td><td>77</td><td></td></tr>
-     * <tr><td>fill_horizontal</td><td>7</td><td></td></tr>
-     * <tr><td>fill_vertical</td><td>70</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     *
-     * @attr name android:layout_gravity
-     */
-    public static final int CoordinatorLayout_Layout_android_layout_gravity=0;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#layout_anchor}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     *
-     * @attr name com.example.turkey_earthquake:layout_anchor
-     */
-    public static final int CoordinatorLayout_Layout_layout_anchor=1;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#layout_anchorGravity}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>center</td><td>11</td><td></td></tr>
-     * <tr><td>center_horizontal</td><td>1</td><td></td></tr>
-     * <tr><td>center_vertical</td><td>10</td><td></td></tr>
-     * <tr><td>clip_horizontal</td><td>8</td><td></td></tr>
-     * <tr><td>clip_vertical</td><td>80</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>fill</td><td>77</td><td></td></tr>
-     * <tr><td>fill_horizontal</td><td>7</td><td></td></tr>
-     * <tr><td>fill_vertical</td><td>70</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     *
-     * @attr name com.example.turkey_earthquake:layout_anchorGravity
-     */
-    public static final int CoordinatorLayout_Layout_layout_anchorGravity=2;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#layout_behavior}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     *
-     * @attr name com.example.turkey_earthquake:layout_behavior
-     */
-    public static final int CoordinatorLayout_Layout_layout_behavior=3;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#layout_dodgeInsetEdges}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>all</td><td>77</td><td></td></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     *
-     * @attr name com.example.turkey_earthquake:layout_dodgeInsetEdges
-     */
-    public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges=4;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#layout_insetEdge}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>Must be one of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     *
-     * @attr name com.example.turkey_earthquake:layout_insetEdge
-     */
-    public static final int CoordinatorLayout_Layout_layout_insetEdge=5;
-    /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#layout_keyline}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>May be an integer value, such as "<code>100</code>".
-     *
-     * @attr name com.example.turkey_earthquake:layout_keyline
-     */
-    public static final int CoordinatorLayout_Layout_layout_keyline=6;
-    /**
      * Attributes that can be used with a FontFamily.
      * <p>Includes the following attributes:</p>
      * <table>
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.example.turkey_earthquake:fontProviderAuthority}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.example.turkey_earthquake:fontProviderCerts}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.example.turkey_earthquake:fontProviderFetchStrategy}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.example.turkey_earthquake:fontProviderFetchTimeout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.example.turkey_earthquake:fontProviderPackage}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.example.turkey_earthquake:fontProviderQuery}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.example.turkey_earthquake:fontProviderAuthority}</code></td><td>The authority of the Font Provider to be used for the request.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.example.turkey_earthquake:fontProviderCerts}</code></td><td>The sets of hashes for the certificates the provider should be signed with.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.example.turkey_earthquake:fontProviderFetchStrategy}</code></td><td>The strategy to be used when fetching font data from a font provider in XML layouts.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.example.turkey_earthquake:fontProviderFetchTimeout}</code></td><td>The length of the timeout during fetching.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.example.turkey_earthquake:fontProviderPackage}</code></td><td>The package for the Font Provider to be used for the request.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.example.turkey_earthquake:fontProviderQuery}</code></td><td>The query to be sent over to the provider.</td></tr>
      * </table>
      * @see #FontFamily_fontProviderAuthority
      * @see #FontFamily_fontProviderCerts
@@ -857,12 +606,13 @@ public final class R {
      * @see #FontFamily_fontProviderQuery
      */
     public static final int[] FontFamily={
-      0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011, 
-      0x7f010012, 0x7f010013
+      0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010, 
+      0x7f010011, 0x7f010012
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontProviderAuthority}
-     * attribute's value can be found in the {@link #FontFamily} array.
+     * <p>
+     * @attr description
+     * The authority of the Font Provider to be used for the request.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -871,8 +621,13 @@ public final class R {
      */
     public static final int FontFamily_fontProviderAuthority=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontProviderCerts}
-     * attribute's value can be found in the {@link #FontFamily} array.
+     * <p>
+     * @attr description
+     * The sets of hashes for the certificates the provider should be signed with. This is
+     * used to verify the identity of the provider, and is only required if the provider is not
+     * part of the system image. This value may point to one list or a list of lists, where each
+     * individual list represents one collection of signature hashes. Refer to your font provider's
+     * documentation for these values.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -883,8 +638,15 @@ public final class R {
      */
     public static final int FontFamily_fontProviderCerts=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontProviderFetchStrategy}
-     * attribute's value can be found in the {@link #FontFamily} array.
+     * <p>
+     * @attr description
+     * The strategy to be used when fetching font data from a font provider in XML layouts.
+     * This attribute is ignored when the resource is loaded from code, as it is equivalent to the
+     * choice of API between {@link
+     * androidx.core.content.res.ResourcesCompat#getFont(Context, int)} (blocking) and
+     * {@link
+     * androidx.core.content.res.ResourcesCompat#getFont(Context, int, FontCallback, Handler)}
+     * (async).
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -892,16 +654,25 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>async</td><td>1</td><td></td></tr>
-     * <tr><td>blocking</td><td>0</td><td></td></tr>
+     * <tr><td>async</td><td>1</td><td>The async font fetch works as follows.
+     * First, check the local cache, then if the requeted font is not cached, trigger a
+     * request the font and continue with layout inflation. Once the font fetch succeeds, the
+     * target text view will be refreshed with the downloaded font data. The
+     * fontProviderFetchTimeout will be ignored if async loading is specified.</td></tr>
+     * <tr><td>blocking</td><td>0</td><td>The blocking font fetch works as follows.
+     * First, check the local cache, then if the requested font is not cached, request the
+     * font from the provider and wait until it is finished.  You can change the length of
+     * the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
+     * default typeface will be used instead.</td></tr>
      * </table>
      *
      * @attr name com.example.turkey_earthquake:fontProviderFetchStrategy
      */
     public static final int FontFamily_fontProviderFetchStrategy=2;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontProviderFetchTimeout}
-     * attribute's value can be found in the {@link #FontFamily} array.
+     * <p>
+     * @attr description
+     * The length of the timeout during fetching.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      * <p>Must be one of the following constant values.</p>
@@ -910,15 +681,18 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>forever</td><td>ffffffff</td><td></td></tr>
+     * <tr><td>forever</td><td>ffffffff</td><td>A special value for the timeout. In this case, the blocking font fetching will not
+     * timeout and wait until a reply is received from the font provider.</td></tr>
      * </table>
      *
      * @attr name com.example.turkey_earthquake:fontProviderFetchTimeout
      */
     public static final int FontFamily_fontProviderFetchTimeout=3;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontProviderPackage}
-     * attribute's value can be found in the {@link #FontFamily} array.
+     * <p>
+     * @attr description
+     * The package for the Font Provider to be used for the request. This is used to verify
+     * the identity of the provider.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -927,8 +701,10 @@ public final class R {
      */
     public static final int FontFamily_fontProviderPackage=4;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontProviderQuery}
-     * attribute's value can be found in the {@link #FontFamily} array.
+     * <p>
+     * @attr description
+     * The query to be sent over to the provider. Refer to your font provider's documentation
+     * on the format of this string.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -948,11 +724,11 @@ public final class R {
      * <tr><td><code>{@link #FontFamilyFont_android_fontStyle android:fontStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_ttcIndex android:ttcIndex}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_fontVariationSettings android:fontVariationSettings}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_font com.example.turkey_earthquake:font}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.example.turkey_earthquake:fontStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings com.example.turkey_earthquake:fontVariationSettings}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.example.turkey_earthquake:fontWeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_ttcIndex com.example.turkey_earthquake:ttcIndex}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_font com.example.turkey_earthquake:font}</code></td><td>The reference to the font file to be used.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.example.turkey_earthquake:fontStyle}</code></td><td>The style of the given font file.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings com.example.turkey_earthquake:fontVariationSettings}</code></td><td>The variation settings to be applied to the font.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.example.turkey_earthquake:fontWeight}</code></td><td>The weight of the given font file.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_ttcIndex com.example.turkey_earthquake:ttcIndex}</code></td><td>The index of the font in the tcc font file.</td></tr>
      * </table>
      * @see #FontFamilyFont_android_font
      * @see #FontFamilyFont_android_fontWeight
@@ -967,8 +743,8 @@ public final class R {
      */
     public static final int[] FontFamilyFont={
       0x01010532, 0x01010533, 0x0101053f, 0x0101056f, 
-      0x01010570, 0x7f01000d, 0x7f010014, 0x7f010015, 
-      0x7f010016, 0x7f010028
+      0x01010570, 0x7f01000c, 0x7f010013, 0x7f010014, 
+      0x7f010015, 0x7f01001f
     };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#font}
@@ -992,8 +768,9 @@ public final class R {
      */
     public static final int FontFamilyFont_android_fontWeight=1;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#fontStyle}
-     * attribute's value can be found in the {@link #FontFamilyFont} array.
+     * <p>
+     * @attr description
+     * References to the framework attrs
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1028,8 +805,10 @@ public final class R {
      */
     public static final int FontFamilyFont_android_fontVariationSettings=4;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#font}
-     * attribute's value can be found in the {@link #FontFamilyFont} array.
+     * <p>
+     * @attr description
+     * The reference to the font file to be used. This should be a file in the res/font folder
+     * and should therefore have an R reference value. E.g. @font/myfont
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1040,8 +819,11 @@ public final class R {
      */
     public static final int FontFamilyFont_font=5;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontStyle}
-     * attribute's value can be found in the {@link #FontFamilyFont} array.
+     * <p>
+     * @attr description
+     * The style of the given font file. This will be used when the font is being loaded into
+     * the font stack and will override any style information in the font's header tables. If
+     * unspecified, the value in the font's header tables will be used.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1057,8 +839,12 @@ public final class R {
      */
     public static final int FontFamilyFont_fontStyle=6;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontVariationSettings}
-     * attribute's value can be found in the {@link #FontFamilyFont} array.
+     * <p>
+     * @attr description
+     * The variation settings to be applied to the font. The string should be in the following
+     * format: "'tag1' value1, 'tag2' value2, ...". If the default variation settings should be
+     * used, or the font used does not support variation settings, this attribute needs not be
+     * specified.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -1067,8 +853,13 @@ public final class R {
      */
     public static final int FontFamilyFont_fontVariationSettings=7;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#fontWeight}
-     * attribute's value can be found in the {@link #FontFamilyFont} array.
+     * <p>
+     * @attr description
+     * The weight of the given font file. This will be used when the font is being loaded into
+     * the font stack and will override any weight information in the font's header tables. Must
+     * be a positive number, a multiple of 100, and between 100 and 900, inclusive. The most
+     * common values are 400 for regular weight and 700 for bold weight. If unspecified, the value
+     * in the font's header tables will be used.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
@@ -1076,8 +867,10 @@ public final class R {
      */
     public static final int FontFamilyFont_fontWeight=8;
     /**
-     * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#ttcIndex}
-     * attribute's value can be found in the {@link #FontFamilyFont} array.
+     * <p>
+     * @attr description
+     * The index of the font in the tcc font file. If the font file referenced is not in the
+     * tcc format, this attribute needs not be specified.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
@@ -1123,8 +916,9 @@ public final class R {
       0x01010510, 0x01010511, 0x01010512, 0x01010513
     };
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#startColor}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Start color of the gradient.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1134,8 +928,9 @@ public final class R {
      */
     public static final int GradientColor_android_startColor=0;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#endColor}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * End color of the gradient.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1145,8 +940,9 @@ public final class R {
      */
     public static final int GradientColor_android_endColor=1;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#type}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Type of gradient. The default type is linear.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1163,8 +959,9 @@ public final class R {
      */
     public static final int GradientColor_android_type=2;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#centerX}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * X coordinate of the center of the gradient within the path.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      * <p>May be a fractional value, which is a floating point number appended with
@@ -1176,8 +973,9 @@ public final class R {
      */
     public static final int GradientColor_android_centerX=3;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#centerY}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Y coordinate of the center of the gradient within the path.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      * <p>May be a fractional value, which is a floating point number appended with
@@ -1189,8 +987,9 @@ public final class R {
      */
     public static final int GradientColor_android_centerY=4;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#gradientRadius}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Radius of the gradient, used only with radial gradient.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -1207,8 +1006,9 @@ public final class R {
      */
     public static final int GradientColor_android_gradientRadius=5;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#tileMode}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Defines the tile mode of the gradient. SweepGradient doesn't support tiling.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1226,8 +1026,9 @@ public final class R {
      */
     public static final int GradientColor_android_tileMode=6;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#centerColor}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Optional center color.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1237,8 +1038,10 @@ public final class R {
      */
     public static final int GradientColor_android_centerColor=7;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#startX}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * X coordinate of the start point origin of the gradient.
+     * Defined in same coordinates as the path itself
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1246,8 +1049,10 @@ public final class R {
      */
     public static final int GradientColor_android_startX=8;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#startY}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Y coordinate of the start point of the gradient within the shape.
+     * Defined in same coordinates as the path itself
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1255,8 +1060,10 @@ public final class R {
      */
     public static final int GradientColor_android_startY=9;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#endX}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * X coordinate of the end point origin of the gradient.
+     * Defined in same coordinates as the path itself
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1264,8 +1071,10 @@ public final class R {
      */
     public static final int GradientColor_android_endX=10;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#endY}
-     * attribute's value can be found in the {@link #GradientColor} array.
+     * <p>
+     * @attr description
+     * Y coordinate of the end point of the gradient within the shape.
+     * Defined in same coordinates as the path itself
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1289,8 +1098,9 @@ public final class R {
       0x010101a5, 0x01010514
     };
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#color}
-     * attribute's value can be found in the {@link #GradientColorItem} array.
+     * <p>
+     * @attr description
+     * The current color for the offset inside the gradient.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1300,8 +1110,10 @@ public final class R {
      */
     public static final int GradientColorItem_android_color=0;
     /**
-     * <p>This symbol is the offset where the {@link android.R.attr#offset}
-     * attribute's value can be found in the {@link #GradientColorItem} array.
+     * <p>
+     * @attr description
+     * The offset (or ratio) of this current color item inside the gradient.
+     * The value is only meaningful when it is between 0 and 1.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1324,7 +1136,7 @@ public final class R {
      * @see #LoadingImageView_imageAspectRatioAdjust
      */
     public static final int[] LoadingImageView={
-      0x7f01000a, 0x7f010017, 0x7f010018
+      0x7f01000a, 0x7f010016, 0x7f010017
     };
     /**
      * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#circleCrop}
@@ -1423,10 +1235,10 @@ public final class R {
     public static final int[] MapAttrs={
       0x7f010001, 0x7f010003, 0x7f010004, 0x7f010005, 
       0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 
-      0x7f01001a, 0x7f01001b, 0x7f01001c, 0x7f01001d, 
-      0x7f010024, 0x7f010025, 0x7f010029, 0x7f01002a, 
-      0x7f01002b, 0x7f01002c, 0x7f01002d, 0x7f01002e, 
-      0x7f01002f, 0x7f010030, 0x7f010031, 0x7f010032
+      0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b, 
+      0x7f01001c, 0x7f01001d, 0x7f010020, 0x7f010021, 
+      0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025, 
+      0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029
     };
     /**
      * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#ambientEnabled}
@@ -1683,7 +1495,7 @@ public final class R {
      * @see #SignInButton_scopeUris
      */
     public static final int[] SignInButton={
-      0x7f010002, 0x7f01000b, 0x7f010026
+      0x7f010002, 0x7f01000b, 0x7f01001e
     };
     /**
      * <p>This symbol is the offset where the {@link com.example.turkey_earthquake.R.attr#buttonSize}
