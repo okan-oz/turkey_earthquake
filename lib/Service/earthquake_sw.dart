@@ -7,7 +7,7 @@ import 'package:turkey_earthquake/models/eqresponse.dart';
 
 class EarthQuakeService {
   static final String eqApiUrl =
-      "https://api.orhanaydogdu.com.tr/deprem/live.php1";
+      "https://api.orhanaydogdu.com.tr/deprem/live.php";
   static Future<List<EarthQuake>> GetEQList() async {
     EqResponse eqResponse=EqResponse();
     try {
@@ -23,7 +23,7 @@ class EarthQuakeService {
           context:
               'Exception occured when tring to get earthquake data from api.');
 
-          Crashlytics.instance.crash();
+          //Crashlytics.instance.crash();
         throw e;
     }
   }
