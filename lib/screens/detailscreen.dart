@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turkey_earthquake/helper/utils.dart';
+import 'package:turkey_earthquake/logger.dart';
 import 'package:turkey_earthquake/mainbody_ui/map.dart';
 import 'package:turkey_earthquake/models/earthquake.dart';
 
@@ -13,8 +14,22 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    try {
+   
+      throw ("error_example");
+    } catch (e, s) {
+      // "context" will append the word "thrown" in the
+      // Crashlytics console.
+      Logger.recordError(
+          e,
+          s,
+          "Crashlytics error from IOS .Exception occured at " +
+              DateTime.now().toString());
+    }
+
     return Scaffold(
-      body:Container(child: CustomScrollView(
+        body: Container(
+      child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
@@ -82,7 +97,6 @@ class DetailScreen extends StatelessWidget {
           ),
           SliverList(
             delegate: SliverChildListDelegate([
-              
               ListTile(
                 leading: Icon(
                   Icons.dialpad,
@@ -112,16 +126,14 @@ class DetailScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-             padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
               height: 350,
               width: 50,
               child: MapSample(eq),
             ),
           ),
         ],
-      ),)  
-    );
+      ),
+    ));
   }
-
-
 }

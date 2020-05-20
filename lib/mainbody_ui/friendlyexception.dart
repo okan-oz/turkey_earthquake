@@ -21,12 +21,12 @@ class FriendlyException extends StatelessWidget {
               title: Text("Hiç beklemediğimiz bir Hata oldu"),
               subtitle: Text(
                   "Deprem verilirini alırken sıkıntılar yaşıyoruz.Rica etsek daha sonra tekrar deneyebilir misiniz?"),
-              trailing: Icon(
-                Icons.settings_backup_restore,
-                size: 70,
-                semanticLabel: "Çok üzgünüz ..",
-                color: Colors.green,
-              ),
+              // trailing: Icon(
+              //   Icons.settings_backup_restore,
+              //   size: 70,
+              //   semanticLabel: "Çok üzgünüz ..",
+              //   color: Colors.green,
+              // ),
             ),
           )),
     );
