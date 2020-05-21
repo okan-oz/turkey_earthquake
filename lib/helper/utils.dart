@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:super_alertbox/super_alertbox.dart';
 
-
-class Utils
-{
-  static double CheckDouble(dynamic value){
-    if (value is String  ) {
+class Utils {
+  static double CheckDouble(dynamic value) {
+    if (value is String) {
       return double.parse(value);
-    } 
-    else if (value is int)
-    {
+    } else if (value is int) {
       return double.parse(value.toString());
-    }
-    else {
+    } else {
       return value;
     }
   }
 
- static Color DecideListTileColor(double mg) {
-    if (mg <3) {
+  static Color DecideListTileColor(double mg) {
+    if (mg < 3) {
       return Colors.blueGrey;
     } else if (1 < mg && mg <= 3) {
       return Colors.blue;
@@ -34,6 +30,8 @@ class Utils
     }
     return Colors.white;
   }
-    
 
+  static void ShowAlert(BuildContext context, String message) {
+    CustomAlertBox.showCustomSnackBar(message,context);
+  }
 }

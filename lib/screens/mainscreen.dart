@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turkey_earthquake/helper/text_const.dart';
+import 'package:turkey_earthquake/helper/utils.dart';
 import 'package:turkey_earthquake/mainbody_ui/custom_drawer.dart';
 import 'package:turkey_earthquake/mainbody_ui/earthquakelist.dart';
 
@@ -26,6 +27,8 @@ class _MainSreenState extends State<MainSreen> {
           },
           child: EarthQuakeList(),
           semanticsLabel: "Güncelleniyor..",
+         
+      
         ));
   }
 }

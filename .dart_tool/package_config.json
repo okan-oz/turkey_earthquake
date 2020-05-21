@@ -170,6 +170,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "super_alertbox",
+      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/git/super_alertbox-7a5cf3c6122a8b25beab53176e4c8f20ccc9000f/",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.1.0",
       "packageUri": "lib/",
@@ -206,7 +212,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-05-20T19:40:45.372316Z",
+  "generated": "2020-05-21T17:56:59.525313Z",
   "generator": "pub",
   "generatorVersion": "2.8.2"
 }

@@ -4,6 +4,7 @@ import 'package:turkey_earthquake/logger.dart';
 import 'package:turkey_earthquake/mainbody_ui/map.dart';
 import 'package:turkey_earthquake/models/earthquake.dart';
 
+
 class DetailScreen extends StatelessWidget {
   EarthQuake eq;
   DetailScreen(this.eq);
@@ -12,14 +13,12 @@ class DetailScreen extends StatelessWidget {
     return TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
   }
 
+
   @override
   Widget build(BuildContext context) {
     try {
-   
-      throw ("error_example");
+    //  throw ("error_example");
     } catch (e, s) {
-      // "context" will append the word "thrown" in the
-      // Crashlytics console.
       Logger.recordError(
           e,
           s,

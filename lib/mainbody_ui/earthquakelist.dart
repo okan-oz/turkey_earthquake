@@ -36,6 +36,7 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
               if (snapshot.hasError) {
                 return FriendlyException();
               } else {
+              
                 return ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) {
