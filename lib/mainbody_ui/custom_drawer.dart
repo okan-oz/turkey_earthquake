@@ -13,12 +13,6 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(
-                  
-                    Icons.filter,
-                    color: Colors.white,
-                    size: 100.0,
-                  ),
                   Text(
                     ConstText.myAppTitle,
                     style: TextStyle(color: Colors.white, fontSize: 25.0),
@@ -27,21 +21,40 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black12, spreadRadius: 0, blurRadius: 0),
+                ],
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/depremAppBar.jpg",
+                    ),
+                    fit: BoxFit.fill)),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Anasayfa'),
-            trailing: Icon(Icons.arrow_right),
+            leading: Icon(
+              Icons.home,
+              size: 40,
+            ),
+            title: Text('Son Deprem Listesi'),
+            trailing: Icon(
+              Icons.arrow_right,
+              size: 40,
+            ),
             onTap: () {
               Navigator.pushNamed(context, "/");
             },
           ),
           ExpansionTile(
-            leading: Icon(Icons.perm_device_information),
+            leading: Icon(
+              Icons.perm_device_information,
+              size: 40,
+            ),
             title: Text('Filtrele'),
-            trailing: Icon(Icons.arrow_drop_down),
+            trailing: Icon(
+              Icons.arrow_drop_down,
+              size: 40,
+            ),
             children: <Widget>[
               _createFilter(1.0),
               _createFilter(3.0),
@@ -49,47 +62,34 @@ class CustomDrawer extends StatelessWidget {
               _createFilter(5.0),
               _createFilter(6.0),
               _createFilter(7.0),
-
             ],
           ),
           ListTile(
-            leading: Icon(Icons.local_laundry_service),
-            title: Text('Hizmetler'),
-            trailing: Icon(Icons.arrow_right),
+            leading: Icon(
+              Icons.local_laundry_service,
+              size: 40,
+            ),
+            title: Text('En Büyük Depremler'),
+            trailing: Icon(
+              Icons.arrow_right,
+              size: 40,
+            ),
             onTap: () {
               Navigator.pushNamed(context, "/hizmetler");
             },
           ),
           ListTile(
-            leading: Icon(Icons.image),
+            leading: Icon(
+              Icons.image,
+              size: 40,
+            ),
             title: Text('Galeri'),
-            trailing: Icon(Icons.arrow_right),
+            trailing: Icon(
+              Icons.arrow_right,
+              size: 40,
+            ),
             onTap: () {
               Navigator.pushNamed(context, "/galeri");
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.question_answer),
-            title: Text('Nasıl Yapıyoruz'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.pushNamed(context, "/nasilyapiyoruz");
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.keyboard),
-            title: Text('Ücret Hesapla'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.pushNamed(context, "/ucrethesapla");
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.contact_mail),
-            title: Text('İletişim'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.pushNamed(context, "/iletisim");
             },
           ),
         ],
@@ -103,7 +103,7 @@ class CustomDrawer extends StatelessWidget {
           elevation: 4,
           child: Container(
               decoration: BoxDecoration(
-                color:Utils.DecideListTileColor(mag),
+                color: Utils.DecideListTileColor(mag),
                 border: Border.all(
                   color: Utils.DecideListTileColor(mag),
                 ),
