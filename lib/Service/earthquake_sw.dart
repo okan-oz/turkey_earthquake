@@ -3,19 +3,25 @@ import 'package:turkey_earthquake/models/earthquake.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:turkey_earthquake/models/eqresponse.dart';
+import 'package:turkey_earthquake/models/filter.dart';
 import '../logger.dart';
 
 class EarthQuakeService {
   static final String _eqApiUrl =
       "https://api.orhanaydogdu.com.tr/deprem/live.php";
 
-  static int _timeout=10;
-  static Future<List<EarthQuake>> GetEQList() async {
+  static int _timeout = 10;
+  static Future<List<EarthQuake>> GetEQList(List<Filter> fItems) async {
     EqResponse eqResponse = EqResponse();
     try {
       var sr = await http.get(_eqApiUrl).timeout(Duration(seconds: _timeout));
       if (sr.statusCode == 200) {
-        eqResponse = EqResponse.fromJson(json.decode(sr.body));
+        if (fItems != null && fItems.length > 0) {
+          eqResponse =
+              EqResponse.fromJsonWithFilter(json.decode(sr.body), fItems);
+        } else {
+          eqResponse = EqResponse.fromJson(json.decode(sr.body));
+        }
         return eqResponse.result;
       } else {
         throw Exception("Baglanamadık ${sr.statusCode}");

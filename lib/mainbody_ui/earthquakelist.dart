@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:turkey_earthquake/Service/earthquake_sw.dart';
 import 'package:turkey_earthquake/helper/utils.dart';
 import 'package:turkey_earthquake/models/earthquake.dart';
+import 'package:turkey_earthquake/models/filter.dart';
 import 'package:turkey_earthquake/screens/detailscreen.dart';
-
 import 'friendlyexception.dart';
 
 class EarthQuakeList extends StatefulWidget {
+  
+  List<Filter> _filterItems;
+  EarthQuakeList(this._filterItems);
   @override
   _EarthQuakeListState createState() => _EarthQuakeListState();
 }
@@ -36,7 +39,6 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
               if (snapshot.hasError) {
                 return FriendlyException();
               } else {
-              
                 return ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) {
@@ -87,6 +89,6 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
   }
 
   Future<List<EarthQuake>> _getEartquakeList() async {
-    return EarthQuakeService.GetEQList();
+    return EarthQuakeService.GetEQList(widget._filterItems);
   }
 }

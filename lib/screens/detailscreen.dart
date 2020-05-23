@@ -34,7 +34,6 @@ class DetailScreen extends StatelessWidget {
           SliverAppBar(
             stretch: true,
             onStretchTrigger: () {
-              // Function callback for stretch
               return;
             },
             expandedHeight: 130.0,
