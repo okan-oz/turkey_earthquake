@@ -55,7 +55,7 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(
-              color: Utils.DecideListTileColor(eq.mag),
+              color: Colors.grey,//Utils.DecideListTileColor(eq.mag),
             ),
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
@@ -82,7 +82,7 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
             subtitle: Text(eq.date),
             trailing: Icon(
               Icons.forward,
-              color: Utils.DecideListTileColor(eq.mag),
+              color:Colors.grey, //Utils.DecideListTileColor(eq.mag),
             ),
           ),
         ));

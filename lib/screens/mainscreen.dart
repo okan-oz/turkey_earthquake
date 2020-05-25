@@ -22,7 +22,7 @@ class _MainSreenState extends State<MainSreen> {
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),
           ),
-          backgroundColor: Colors.red.shade800), // CustomAppBar(),
+          backgroundColor: Colors.red.shade900), // CustomAppBar(),
       drawer: CustomDrawer(),
       body: RefreshIndicator(
         onRefresh: () async {
