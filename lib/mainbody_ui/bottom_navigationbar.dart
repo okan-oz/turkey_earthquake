@@ -20,7 +20,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         backgroundColor: Colors.grey.shade300,
         items: [
          BottomNavigationBarItem(
-            title: Text("Beğen",style: _textStyle,),
+            title: Text("Oy ver",style: _textStyle,),
             backgroundColor: Colors.grey,
             icon: IconButton(
               icon: Icon(

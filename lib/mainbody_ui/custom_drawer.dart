@@ -11,12 +11,14 @@ class CustomDrawer extends StatefulWidget {
   _CustomDrawerState createState() => _CustomDrawerState();
 }
 
-
-
 class _CustomDrawerState extends State<CustomDrawer> {
   static String _selectAllText = "Hepsini Seç";
   static String _deselectAllText = "Seçimleri kaldır";
   static String _doFilterText = "Filtrele";
+  Color _expansionTileColor = Colors.grey.shade600;
+
+  final TextStyle _filterTextStyle =
+      TextStyle(color: Colors.black, fontSize: 15);
 
   String selectClearText = _selectAllText;
   bool _isAllSelect = true;
@@ -29,10 +31,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
   bool chcbox8 = true;
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
   }
-  
+
   @override
   void initState() {
     selectClearText = _isAllSelect == true ? _deselectAllText : _selectAllText;
@@ -146,7 +148,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               Icons.home,
               size: 40,
             ),
-            title: Text('Son Deprem Listesi'),
+            title: Text('Son Deprem Listesi',style: _filterTextStyle,),
             trailing: Icon(
               Icons.arrow_right,
               size: 40,
@@ -157,12 +159,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
             },
           ),
           ExpansionTile(
+            initiallyExpanded: true,
             backgroundColor: Colors.grey.shade300,
             leading: Icon(
               Icons.perm_device_information,
+              color: _expansionTileColor,
               size: 40,
             ),
-            title: Text('Filtrele'),
+            title: Text('Filtrele',style: _filterTextStyle),
             trailing: Icon(
               Icons.arrow_drop_down,
               size: 40,
@@ -209,7 +213,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               Icons.local_laundry_service,
               size: 40,
             ),
-            title: Text('En Büyük Depremler'),
+            title: Text('En Büyük Depremler',style: _filterTextStyle,),
             trailing: Icon(
               Icons.arrow_right,
               size: 40,
@@ -223,7 +227,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               Icons.image,
               size: 40,
             ),
-            title: Text('Galeri'),
+            title: Text('Galeri',style: _filterTextStyle,),
             trailing: Icon(
               Icons.arrow_right,
               size: 40,
@@ -264,7 +268,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       '0 ile 1 arasındakiler',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     )
                   ],
                 )))),
@@ -295,7 +299,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       '1 ile 3 arasındakiler',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     ),
                   ],
                 )))),
@@ -327,7 +331,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       '3 ile 4 arasındakiler',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     )
                   ],
                 )))),
@@ -358,7 +362,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       '4 ile 5 arasındakiler',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     )
                   ],
                 )))),
@@ -389,7 +393,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       '5 ile 6 arasındakiler',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     )
                   ],
                 )))),
@@ -420,7 +424,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       '6 ile 7 arasındakiler',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     )
                   ],
                 )))),
@@ -451,13 +455,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         }),
                     Text(
                       "7'den büyükler",
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                      style: _filterTextStyle,
                     )
                   ],
                 )))),
       );
-    }
-    else 
-    return FriendlyException.withTitle("Sınırlar dışında olan bir büyüklük değeri .");
+    } else
+      return FriendlyException.withTitle(
+          "Sınırlar dışında olan bir büyüklük değeri .");
   }
 }

@@ -4,6 +4,14 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/FLTGoogleMapsPlugin.h</key>
+		<data>
+		LFSjTxhozey7QSXWtFWt/xOL8NQ=
+		</data>
+		<key>Headers/GoogleMapCircleController.h</key>
+		<data>
+		dycVd0fihLRlnJ2c0f98CP9sPc0=
+		</data>
 		<key>Headers/GoogleMapController.h</key>
 		<data>
 		7HJkR2gN6QhthAPCsfKl8xz3HHM=
@@ -11,6 +19,14 @@
 		<key>Headers/GoogleMapMarkerController.h</key>
 		<data>
 		bM4Zim7sZhPbuCFl/dcjpkQpRsM=
+		</data>
+		<key>Headers/GoogleMapPolygonController.h</key>
+		<data>
+		VuVqAseGo6VbIujRZgyWJUkYZWY=
+		</data>
+		<key>Headers/GoogleMapPolylineController.h</key>
+		<data>
+		gFLQIPecAX5ocYb2d6qjfCv0PNM=
 		</data>
 		<key>Headers/GoogleMapsPlugin.h</key>
 		<data>
@@ -35,6 +51,28 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/FLTGoogleMapsPlugin.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LFSjTxhozey7QSXWtFWt/xOL8NQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			xLXOW3fO5vbVr5bmWjkXizs367wX8BsJpQgPeOPGc78=
+			</data>
+		</dict>
+		<key>Headers/GoogleMapCircleController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dycVd0fihLRlnJ2c0f98CP9sPc0=
+			</data>
+			<key>hash2</key>
+			<data>
+			2cGqJ/XUbJRV6BXMcsfwXT9s/0tQzi5p6HDxyVmClZE=
+			</data>
+		</dict>
 		<key>Headers/GoogleMapController.h</key>
 		<dict>
 			<key>hash</key>
@@ -55,6 +93,28 @@
 			<key>hash2</key>
 			<data>
 			UvGN4tR+QnlRfogJ53NGgqiAdMJ/DF5Bzy4b1rWXVQw=
+			</data>
+		</dict>
+		<key>Headers/GoogleMapPolygonController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VuVqAseGo6VbIujRZgyWJUkYZWY=
+			</data>
+			<key>hash2</key>
+			<data>
+			4WGg/8ULyZjWxbxiQk6bf40ctfsNBbdrLVMwjBpja+c=
+			</data>
+		</dict>
+		<key>Headers/GoogleMapPolylineController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gFLQIPecAX5ocYb2d6qjfCv0PNM=
+			</data>
+			<key>hash2</key>
+			<data>
+			9UQ192/FUYgQ5aBi9JBbEz/rNT0n+ql6EDBmfc2qerU=
 			</data>
 		</dict>
 		<key>Headers/GoogleMapsPlugin.h</key>
