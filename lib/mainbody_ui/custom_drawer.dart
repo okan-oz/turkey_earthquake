@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:turkey_earthquake/helper/text_const.dart';
 import 'package:turkey_earthquake/helper/utils.dart';
 import 'package:provider/provider.dart';
+import 'package:turkey_earthquake/mainbody_ui/friendlyexception.dart';
 import 'package:turkey_earthquake/models/filter.dart';
 import 'package:flutter/foundation.dart';
 
@@ -9,6 +10,8 @@ class CustomDrawer extends StatefulWidget {
   @override
   _CustomDrawerState createState() => _CustomDrawerState();
 }
+
+
 
 class _CustomDrawerState extends State<CustomDrawer> {
   static String _selectAllText = "Hepsini Seç";
@@ -25,6 +28,11 @@ class _CustomDrawerState extends State<CustomDrawer> {
   bool chcbox7 = true;
   bool chcbox8 = true;
 
+  @override
+  void dispose(){
+    super.dispose();
+  }
+  
   @override
   void initState() {
     selectClearText = _isAllSelect == true ? _deselectAllText : _selectAllText;
@@ -99,6 +107,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
     context.read<Filters>().Update(filters);
     Navigator.pop(context, "/");
+    Utils.ShowUpdateEqInfo(context);
   }
 
   @override
@@ -448,5 +457,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 )))),
       );
     }
+    else 
+    return FriendlyException.withTitle("Sınırlar dışında olan bir büyüklük değeri .");
   }
 }

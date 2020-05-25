@@ -57,7 +57,7 @@
     },
     {
       "name": "firebase_analytics",
-      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.11",
+      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.14",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -66,6 +66,12 @@
       "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_crashlytics-0.1.3+3",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "flushbar",
+      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flushbar-1.10.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "flutter",
@@ -183,7 +189,7 @@
     },
     {
       "name": "super_alertbox",
-      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/git/super_alertbox-7a5cf3c6122a8b25beab53176e4c8f20ccc9000f/",
+      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/git/super_alertbox-22fd9b74f882625ab11f9fe354f6ce730dac79f5/",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -224,7 +230,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-05-23T13:17:31.751666Z",
+  "generated": "2020-05-25T21:42:37.943831Z",
   "generator": "pub",
   "generatorVersion": "2.8.2"
 }

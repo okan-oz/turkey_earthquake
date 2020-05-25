@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FriendlyException extends StatelessWidget {
-  FriendlyException();
 
+  String _title="Deprem verilirini alırken sıkıntılar yaşıyoruz.Rica etsek daha sonra tekrar deneyebilir misiniz?";
+
+  FriendlyException();
+ 
+   FriendlyException.withTitle(this._title);
+   
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,9 +23,9 @@ class FriendlyException extends StatelessWidget {
           child: Center(
             child: ListTile(
               leading: Icon(Icons.build,color:Colors.red),
-              title: Text("Hiç beklemediğimiz bir Hata oldu"),
+              title: Text("Hiç beklemediğimiz bir hata oldu"),
               subtitle: Text(
-                  "Deprem verilirini alırken sıkıntılar yaşıyoruz.Rica etsek daha sonra tekrar deneyebilir misiniz?"),
+                  _title),
               // trailing: Icon(
               //   Icons.settings_backup_restore,
               //   size: 70,
