@@ -11,13 +11,13 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
- TextStyle _textStyle =TextStyle(fontSize: 16,color: Colors.grey.shade800);
+ TextStyle _textStyle =TextStyle(fontSize: 14,color: Colors.grey.shade800);
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
+    return SizedBox(height: 110,child:BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Colors.grey.shade400,
         items: [
         //  BottomNavigationBarItem(
         //     title: Text("Oy ver",style: _textStyle,),
@@ -40,7 +40,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               icon: Icon(
                 Icons.delete,
                 color: Colors.grey.shade800,
-                size: 40,
+                size: 28,
               ),
               onPressed: () {
                 context.read<Filters>().Update(new Filters());
@@ -55,7 +55,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               icon: Icon(
                 Icons.refresh,
                 color: Colors.green,
-                size: 40,
+                size: 28,
               ),
               onPressed: () {
                 context.read<Filters>().Refresh();
@@ -63,6 +63,6 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               },
             ),
           )
-        ]);
+        ]) ,);
   }
 }

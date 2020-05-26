@@ -14,9 +14,9 @@ class Utils {
 
   static Color DecideListTileColor(double mg) {
     if (mg <= 1) {
-      return Colors.yellow.shade100;
+      return Colors.blue.shade100;
     } else if (1 < mg && mg <= 3) {
-      return Colors.yellow.shade600;
+      return Colors.blue.shade600;
     } else if (3 < mg && mg <= 4) {
       return Colors.orange.shade600;
     } else if (4 < mg && 5 >= mg) {
