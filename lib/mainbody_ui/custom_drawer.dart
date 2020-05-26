@@ -208,34 +208,34 @@ class _CustomDrawerState extends State<CustomDrawer> {
               )
             ],
           ),
-          ListTile(
-            leading: Icon(
-              Icons.local_laundry_service,
-              size: 40,
-            ),
-            title: Text('En Büyük Depremler',style: _filterTextStyle,),
-            trailing: Icon(
-              Icons.arrow_right,
-              size: 40,
-            ),
-            onTap: () {
-              // Navigator.pushNamed(context, "/hizmetler");
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.image,
-              size: 40,
-            ),
-            title: Text('Galeri',style: _filterTextStyle,),
-            trailing: Icon(
-              Icons.arrow_right,
-              size: 40,
-            ),
-            onTap: () {
-              //Navigator.pushNamed(context, "/galeri");
-            },
-          ),
+          // ListTile(
+          //   leading: Icon(
+          //     Icons.local_laundry_service,
+          //     size: 40,
+          //   ),
+          //   title: Text('En Büyük Depremler',style: _filterTextStyle,),
+          //   trailing: Icon(
+          //     Icons.arrow_right,
+          //     size: 40,
+          //   ),
+          //   onTap: () {
+          //     // Navigator.pushNamed(context, "/hizmetler");
+          //   },
+          // ),
+          // ListTile(
+          //   leading: Icon(
+          //     Icons.image,
+          //     size: 40,
+          //   ),
+          //   title: Text('Galeri',style: _filterTextStyle,),
+          //   trailing: Icon(
+          //     Icons.arrow_right,
+          //     size: 40,
+          //   ),
+          //   onTap: () {
+          //     //Navigator.pushNamed(context, "/galeri");
+          //   },
+          // ),
         ],
       ),
     ));
