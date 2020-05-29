@@ -51,22 +51,22 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
 
   Widget _createEQCard(BuildContext context, EarthQuake eq) {
     return Card(
-        elevation: 4,
+        elevation: 5,
         child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.grey,//Utils.DecideListTileColor(eq.mag),
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-          ),
+          // decoration: BoxDecoration(
+          //   border: Border.all(
+          //     color: Colors.grey,//Utils.DecideListTileColor(eq.mag),
+          //   ),
+          //   borderRadius: BorderRadius.all(Radius.circular(10)),
+          // ),
           height: 75,
           child: ListTile(
             leading: CircleAvatar(
-              radius: 45.0,
+              radius: 25.0,
               child: Text(
                 eq.mag.toString(),
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 23,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
