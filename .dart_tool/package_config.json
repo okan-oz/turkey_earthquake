@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animations",
+      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/animations-1.0.0+5",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.13",
       "packageUri": "lib/",
@@ -230,7 +236,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-05-25T22:49:48.118922Z",
+  "generated": "2020-05-29T23:16:09.292642Z",
   "generator": "pub",
   "generatorVersion": "2.8.2"
 }

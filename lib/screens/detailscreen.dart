@@ -119,6 +119,14 @@ class DetailScreen extends StatelessWidget {
                 title: Text("Lokasyon"),
                 subtitle: Text(eq.lokasyon),
               ),
+              ListTile(
+                leading: Icon(
+                  Icons.share,
+                  color: Colors.blue,
+                ),
+                title: Text("Paylaş"),
+                subtitle: Text("Sosyal Medyada Paylaş"),
+              ),
               // ListTiles++
             ]),
           ),

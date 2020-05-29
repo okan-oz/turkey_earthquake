@@ -81,8 +81,8 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
             title: Text(eq.title.toString()),
             subtitle: Text(eq.date),
             trailing: Icon(
-              Icons.forward,
-              color:Colors.grey, //Utils.DecideListTileColor(eq.mag),
+              Icons.view_headline,
+              color:Colors.grey.shade600, //Utils.DecideListTileColor(eq.mag),
             ),
           ),
         ));
