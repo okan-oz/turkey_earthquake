@@ -26,11 +26,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme:ThemeData.from(colorScheme: const ColorScheme.light()).copyWith(
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: ZoomPageTransitionsBuilder(),
+            
+          },
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       title: ConstText.myAppTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
       home: MainSreen(),
   
     );
