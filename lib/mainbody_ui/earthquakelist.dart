@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:turkey_earthquake/Service/earthquake_sw.dart';
-import 'package:turkey_earthquake/helper/utils.dart';
 import 'package:turkey_earthquake/models/earthquake.dart';
 import 'package:turkey_earthquake/models/filter.dart';
 import 'package:turkey_earthquake/screens/detailscreen.dart';
