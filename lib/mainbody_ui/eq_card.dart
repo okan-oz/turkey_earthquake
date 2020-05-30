@@ -11,7 +11,7 @@ class EqCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return     Card(
-        elevation: 3,
+        elevation: 2,
         child: Container(
           // decoration: BoxDecoration(
           //   border: Border.all(
