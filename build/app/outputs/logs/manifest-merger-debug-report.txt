@@ -8,6 +8,7 @@ MERGED from /Users/okanoz/Documents/EQ_Project/turkey_earthquake/android/app/src
 MERGED from [:firebase_analytics] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:firebase_crashlytics] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/firebase_crashlytics/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:google_maps_flutter] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/google_maps_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:share] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:17.4.1] /Users/okanoz/.gradle/caches/transforms-2/files-2.1/b4c120df658b741c69ee49ef9cbb1f9e/firebase-analytics-ktx-17.4.1/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.0] /Users/okanoz/.gradle/caches/transforms-2/files-2.1/e620327cd1efccc6185fb7e8b8b19b73/firebase-common-ktx-19.3.0/AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-analytics:17.4.1] /Users/okanoz/.gradle/caches/transforms-2/files-2.1/6cfd918360b90ee769ca8a034ac34dfc/firebase-analytics-17.4.1/AndroidManifest.xml:2:1-9:12
@@ -192,6 +193,8 @@ MERGED from [:firebase_crashlytics] /Users/okanoz/Documents/EQ_Project/turkey_ea
 MERGED from [:firebase_crashlytics] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/firebase_crashlytics/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/google_maps_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/google_maps_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:17.4.1] /Users/okanoz/.gradle/caches/transforms-2/files-2.1/b4c120df658b741c69ee49ef9cbb1f9e/firebase-analytics-ktx-17.4.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:17.4.1] /Users/okanoz/.gradle/caches/transforms-2/files-2.1/b4c120df658b741c69ee49ef9cbb1f9e/firebase-analytics-ktx-17.4.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.0] /Users/okanoz/.gradle/caches/transforms-2/files-2.1/e620327cd1efccc6185fb7e8b8b19b73/firebase-common-ktx-19.3.0/AndroidManifest.xml:6:5-8:41

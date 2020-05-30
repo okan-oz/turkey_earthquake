@@ -22,6 +22,7 @@ void main() {
   }, onError: Crashlytics.instance.recordError);
 }
 
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

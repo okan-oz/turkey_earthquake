@@ -2,12 +2,6 @@
   "configVersion": 2,
   "packages": [
     {
-      "name": "animations",
-      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/animations-1.0.0+5",
-      "packageUri": "lib/",
-      "languageVersion": "2.2"
-    },
-    {
       "name": "archive",
       "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.13",
       "packageUri": "lib/",
@@ -164,6 +158,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "share",
+      "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.4+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/okanoz/Documents/Projects/flutter_sdk/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -236,7 +236,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-05-29T23:18:52.228920Z",
+  "generated": "2020-05-30T21:09:26.361570Z",
   "generator": "pub",
   "generatorVersion": "2.8.2"
 }

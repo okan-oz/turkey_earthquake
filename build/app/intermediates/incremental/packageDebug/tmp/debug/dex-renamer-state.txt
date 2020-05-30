@@ -1,4 +1,4 @@
-#Sat May 30 23:48:03 EET 2020
+#Sun May 31 00:11:37 EET 2020
 base.0=/Users/okanoz/Documents/EQ_Project/turkey_earthquake/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

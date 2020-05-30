@@ -3,7 +3,7 @@ import 'package:turkey_earthquake/helper/utils.dart';
 import 'package:turkey_earthquake/logger.dart';
 import 'package:turkey_earthquake/mainbody_ui/map.dart';
 import 'package:turkey_earthquake/models/earthquake.dart';
-
+import 'package:share/share.dart';
 
 class DetailScreen extends StatelessWidget {
   EarthQuake eq;
@@ -13,11 +13,10 @@ class DetailScreen extends StatelessWidget {
     return TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
   }
 
-
   @override
   Widget build(BuildContext context) {
     try {
-    //  throw ("error_example");
+      //  throw ("error_example");
     } catch (e, s) {
       Logger.recordError(
           e,
@@ -120,9 +119,16 @@ class DetailScreen extends StatelessWidget {
                 subtitle: Text(eq.lokasyon),
               ),
               ListTile(
-                leading: Icon(
-                  Icons.share,
-                  color: Colors.blue,
+                leading: IconButton(
+                  icon: Icon(Icons.share, color: Colors.blue,semanticLabel: "Paylaş",  size: 36,),
+                  onPressed: () {
+                    final RenderBox box = context.findRenderObject();
+                    Share.share("${eq.lokasyon} lokasyonunda deprem oldu .Şiddeti ${eq.mag.toString()} ",
+                        subject: "Deprem oldu !",
+                        sharePositionOrigin:
+                            box.localToGlobal(Offset.zero) & box.size);
+ 
+                  },
                 ),
                 title: Text("Paylaş"),
                 subtitle: Text("Sosyal Medyada Paylaş"),
