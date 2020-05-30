@@ -39,10 +39,9 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
               if (snapshot.hasError) {
                 return FriendlyException();
               } else {
-                return Expanded(child: ListView.builder(
+                return ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) {
-                      //return _createEQCard(context, snapshot.data[index]);
                       return EqCard(snapshot.data[index], context, onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute<void>(
@@ -52,12 +51,13 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
                           ),
                         );
                       });
-                    }) );
+                    });
               }
           }
         });
   }
 
+ 
 
   Future<List<EarthQuake>> _getEartquakeList() async {
     return EarthQuakeService.GetEQList(widget._filterItems);
