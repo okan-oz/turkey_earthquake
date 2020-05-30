@@ -10,59 +10,55 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-
- TextStyle _textStyle =TextStyle(fontSize: 14,color: Colors.grey.shade800);
+  TextStyle _textStyle = TextStyle(fontSize: 13, color: Colors.grey.shade900);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 110,child:BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.grey.shade400,
-        items: [
-        //  BottomNavigationBarItem(
-        //     title: Text("Oy ver",style: _textStyle,),
-        //     backgroundColor: Colors.grey,
-        //     icon: IconButton(
-        //       icon: Icon(
-        //         Icons.loyalty,
-        //         color: Colors.red.shade800,
-        //         size: 40,
-        //       ),
-        //       onPressed: () {
-        //         context.read<Filters>().Refresh();
-        //       },
-        //     ),
-        //   ),
-           BottomNavigationBarItem(
-            title: Text("Filtreleri Kaldır",style: _textStyle,),
-            backgroundColor: Colors.grey,
-            icon: IconButton(
-              icon: Icon(
-                Icons.delete,
-                color: Colors.grey.shade800,
-                size: 28,
+    return SizedBox(
+      height: 120,
+      child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white70,
+          items: [
+            BottomNavigationBarItem(
+              title: Text(
+                "Filtreleri Kaldır",
+                style: _textStyle,
               ),
-              onPressed: () {
-                context.read<Filters>().Update(new Filters());
-                Utils.ShowClearEqFilterInfo(context);
-              },
-            ),
-          ),
-          BottomNavigationBarItem(
-            title: Text("Güncelle",style: _textStyle,),
-            backgroundColor: Colors.grey,
-            icon: IconButton(
-              icon: Icon(
-                Icons.refresh,
-                color: Colors.green,
-                size: 28,
+
+              icon: IconButton(
+                highlightColor: Colors.red,
+                icon: Icon(
+                  Icons.delete_forever,
+                  color: Colors.grey.shade800,
+                  size: 30,
+                ),
+                onPressed: () {
+                  context.read<Filters>().Update(new Filters());
+                  Utils.ShowClearEqFilterInfo(context);
+                },
               ),
-              onPressed: () {
-                context.read<Filters>().Refresh();
-                Utils.ShowUpdateEqInfo(context);
-              },
             ),
-          )
-        ]) ,);
+            BottomNavigationBarItem(
+              title: Text(
+                "Güncelle",
+                style: _textStyle,
+              ),
+  
+              icon: IconButton(
+                highlightColor: Colors.red,
+                icon: Icon(
+                  Icons.refresh,
+                  color: Colors.green,
+                  size: 30,
+                ),
+                onPressed: () {
+                  context.read<Filters>().Refresh();
+                  Utils.ShowUpdateEqInfo(context);
+                },
+              ),
+            )
+          ]),
+    );
   }
 }

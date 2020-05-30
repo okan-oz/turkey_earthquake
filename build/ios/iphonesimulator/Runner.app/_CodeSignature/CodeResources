@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		ZTHyrjQI7NAg3HSRDEspro5t6dA=
+		vnbEHrp5VaAFiR3ZuCYa5WFbxhw=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		1zaRVKlECROIRhlNg4aVs9ihiG8=
+		XojhJdOgjU4xbjEuPohxePnqQWQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/LICENSE</key>
 		<data>
-		9BmHr3rJVE5eIQNif5XEbvbFg14=
+		HAw6nVRrwd3IrGsI46WIjlPOnrY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/depremAppBar.jpg</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		j7YKnSJdTVztc8US6LOiWVBHp2E=
+		Q0yByb+WwZil6RAE4sb4mOr0TXM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Frameworks/FBLPromises.framework/FBLPromises</key>
 		<data>
-		Ld/6hBNpSw7e1Rk2jfYeteaip9Q=
+		AVbYqS6tco3iYO4vpF0nd5WEHfM=
 		</data>
 		<key>Frameworks/FBLPromises.framework/Info.plist</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>Frameworks/GoogleUtilities.framework/GoogleUtilities</key>
 		<data>
-		xPOVgR/CTlgvHOqxxTg0iwTLDg0=
+		FiKvCn4R+6ThpggSTME5F0ArhYQ=
 		</data>
 		<key>Frameworks/GoogleUtilities.framework/Info.plist</key>
 		<data>
@@ -246,7 +246,19 @@
 		</data>
 		<key>Frameworks/nanopb.framework/nanopb</key>
 		<data>
-		+13xCxPdf1NJtJikyZkLLOseOPE=
+		E960pCPa49dSW2GIWOhaq553jj0=
+		</data>
+		<key>Frameworks/share.framework/Info.plist</key>
+		<data>
+		jBA1A8DA2WFKCfzt6cZXM6Roluc=
+		</data>
+		<key>Frameworks/share.framework/_CodeSignature/CodeResources</key>
+		<data>
+		cJbIJOJd2RnfOdtHGvayCZXatp8=
+		</data>
+		<key>Frameworks/share.framework/share</key>
+		<data>
+		IhBldxKeP9eS7IL+uFbNf+hDlp8=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -1263,11 +1275,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZTHyrjQI7NAg3HSRDEspro5t6dA=
+			vnbEHrp5VaAFiR3ZuCYa5WFbxhw=
 			</data>
 			<key>hash2</key>
 			<data>
-			UWCK6C2LhjLBV1/7S5tjdbL+rzdpmPP2aUTWcnwQKQ8=
+			qGvGuTY6m7pO+nhZ4T7IXzdN31Xayj5yUXknRx0kpCI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1285,11 +1297,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1zaRVKlECROIRhlNg4aVs9ihiG8=
+			XojhJdOgjU4xbjEuPohxePnqQWQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			LadeEMFye/0mjDWtBEhUiHws5RHx3Atd3o036DK8P8M=
+			4P6eP+A7giPtz4WDkxUOViHBJ3fQiX99LphRNFwAdxU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -1318,11 +1330,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9BmHr3rJVE5eIQNif5XEbvbFg14=
+			HAw6nVRrwd3IrGsI46WIjlPOnrY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aCX5vuLnYWiDvHYZ/D+tL5u8mZRPGbSpS+4ZIU58/9g=
+			hLCXOc3i/jjaxfNp8DnhCbrNv5KFcrqFF02p5uzCkx4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/depremAppBar.jpg</key>
@@ -1362,11 +1374,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			j7YKnSJdTVztc8US6LOiWVBHp2E=
+			Q0yByb+WwZil6RAE4sb4mOr0TXM=
 			</data>
 			<key>hash2</key>
 			<data>
-			g2LcXlBPdoiHASr5UDoaObrNa5B7bFqT1bcu7dePROk=
+			egcfN5eRXn+oT96r7WpIMYpXjRsoOzYC6BPd1kSxufE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1395,11 +1407,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ld/6hBNpSw7e1Rk2jfYeteaip9Q=
+			AVbYqS6tco3iYO4vpF0nd5WEHfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			gwXQrJgv15OKS7RJIYEjaY8Ll3ybmO++zoCaF6buFyQ=
+			dICDCEFA+Fa6ngCWlWBnGx9MwavyqhxL7o0+0wggfv0=
 			</data>
 		</dict>
 		<key>Frameworks/FBLPromises.framework/Info.plist</key>
@@ -1472,11 +1484,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xPOVgR/CTlgvHOqxxTg0iwTLDg0=
+			FiKvCn4R+6ThpggSTME5F0ArhYQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			hP12FJ3170mzomSxYaCUd33QBNhL/DGMP7ykSWQ1iUQ=
+			lFO9F0q1UajI8DkjGMMLIiPqImYSE2stXoQAP0/ULsc=
 			</data>
 		</dict>
 		<key>Frameworks/GoogleUtilities.framework/Info.plist</key>
@@ -1637,11 +1649,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+13xCxPdf1NJtJikyZkLLOseOPE=
+			E960pCPa49dSW2GIWOhaq553jj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			fa1MpRdawQDFVhj49dZ1t6C4e4Di0GjE/xbsCm1n4Bg=
+			LnmvPkacawNqSpVC/qobIiGTaNv0DBKyHo0W3Ol7HhE=
+			</data>
+		</dict>
+		<key>Frameworks/share.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jBA1A8DA2WFKCfzt6cZXM6Roluc=
+			</data>
+			<key>hash2</key>
+			<data>
+			XCq8YrwLWM2K7Ia5e9Acjd2bsfD2v/kLmERDBu/3I64=
+			</data>
+		</dict>
+		<key>Frameworks/share.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cJbIJOJd2RnfOdtHGvayCZXatp8=
+			</data>
+			<key>hash2</key>
+			<data>
+			Cdo9g+q6b4SQZKMgqAD5Wnm5Aco1e38WZWJZSPUHlCg=
+			</data>
+		</dict>
+		<key>Frameworks/share.framework/share</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IhBldxKeP9eS7IL+uFbNf+hDlp8=
+			</data>
+			<key>hash2</key>
+			<data>
+			jOn5Q72NyYAHxXcGw9sq3yw2ggLeBERGFeaJD07xJdA=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>

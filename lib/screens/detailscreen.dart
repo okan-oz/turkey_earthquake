@@ -114,7 +114,7 @@ class DetailScreen extends StatelessWidget {
                     Icons.share,
                     color: Colors.blue,
                     semanticLabel: "Paylaş",
-                    size: 36,
+ 
                   ),
                   onPressed: () {
                     final RenderBox box = context.findRenderObject();
