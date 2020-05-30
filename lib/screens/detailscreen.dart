@@ -15,16 +15,6 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    try {
-      //  throw ("error_example");
-    } catch (e, s) {
-      Logger.recordError(
-          e,
-          s,
-          "Crashlytics error from IOS .Exception occured at " +
-              DateTime.now().toString());
-    }
-
     return Scaffold(
         body: Container(
       child: CustomScrollView(
@@ -120,14 +110,19 @@ class DetailScreen extends StatelessWidget {
               ),
               ListTile(
                 leading: IconButton(
-                  icon: Icon(Icons.share, color: Colors.blue,semanticLabel: "Paylaş",  size: 36,),
+                  icon: Icon(
+                    Icons.share,
+                    color: Colors.blue,
+                    semanticLabel: "Paylaş",
+                    size: 36,
+                  ),
                   onPressed: () {
                     final RenderBox box = context.findRenderObject();
-                    Share.share("${eq.lokasyon} lokasyonunda deprem oldu .Şiddeti ${eq.mag.toString()} ",
+                    Share.share(
+                        "${eq.date} tarihinde , ${eq.lokasyon} lokasyonunda , şiddeti ${eq.mag.toString()} olan deprem oldu . ",
                         subject: "Deprem oldu !",
                         sharePositionOrigin:
                             box.localToGlobal(Offset.zero) & box.size);
- 
                   },
                 ),
                 title: Text("Paylaş"),

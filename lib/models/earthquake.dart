@@ -41,7 +41,7 @@ class EarthQuake {
     rev = json['rev'];
     timestamp = json['timestamp'];
     dateStamp = json['date_stamp'];
-    date = json['date'];
+    date = Utils.formatTextDate(json['date']);
     hash = json['hash'];
     hash2 = json['hash2'];
   }
