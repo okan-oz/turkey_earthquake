@@ -57,7 +57,6 @@ class _EarthQuakeListState extends State<EarthQuakeList> {
         });
   }
 
- 
 
   Future<List<EarthQuake>> _getEartquakeList() async {
     return EarthQuakeService.GetEQList(widget._filterItems);
