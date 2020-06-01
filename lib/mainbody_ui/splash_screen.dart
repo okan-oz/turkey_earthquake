@@ -14,7 +14,7 @@ class _CustomSplashState extends State<CustomSplash>
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 4), () async {
+    Future.delayed(const Duration(seconds: 1), () async {
       Navigator.push(context,
           new MaterialPageRoute(builder: (context) => new MainSreen()));
     });
