@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turkey_earthquake/mainbody_ui/splash_screen.dart';
 import 'package:turkey_earthquake/models/filter.dart';
 import 'package:turkey_earthquake/screens/mainscreen.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainSreen(),
+      home: CustomSplash(),//MainSreen(),
     );
   }
 }
