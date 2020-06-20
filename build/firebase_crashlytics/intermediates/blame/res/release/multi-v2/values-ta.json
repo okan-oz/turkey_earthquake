@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/firebase_crashlytics/intermediates/res/merged/release/values-ta/values-ta.xml",
+            "map": [
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/96cce92ff667a6d820bfe0b53f3fe34d/jetified-play-services-basement-16.0.1/res/values-ta/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "224",
+                        "endOffsets": "471"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "224",
+                        "endOffsets": "325"
+                    }
+                },
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/6656f0bf84eb856e83b124fd154acf47/core-1.1.0/res/values-ta/values-ta.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "330",
+                        "endColumns": "100",
+                        "endOffsets": "426"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/firebase_crashlytics/intermediates/incremental/mergeReleaseResources/merged.dir/values-ta/values-ta.xml",
+            "map": [
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/96cce92ff667a6d820bfe0b53f3fe34d/jetified-play-services-basement-16.0.1/res/values-ta/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "224",
+                        "endOffsets": "471"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "224",
+                        "endOffsets": "325"
+                    }
+                },
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/6656f0bf84eb856e83b124fd154acf47/core-1.1.0/res/values-ta/values-ta.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "330",
+                        "endColumns": "100",
+                        "endOffsets": "426"
+                    }
+                }
+            ]
+        }
+    ]
+}

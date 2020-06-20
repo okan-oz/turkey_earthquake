@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/google_maps_flutter/intermediates/incremental/mergeReleaseResources/merged.dir/values-pt/values-pt.xml",
+            "map": [
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/6656f0bf84eb856e83b124fd154acf47/core-1.1.0/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/google_maps_flutter/intermediates/res/merged/release/values-pt/values-pt.xml",
+            "map": [
+                {
+                    "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/6656f0bf84eb856e83b124fd154acf47/core-1.1.0/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

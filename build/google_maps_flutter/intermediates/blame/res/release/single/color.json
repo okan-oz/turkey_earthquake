@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/google_maps_flutter/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/7a5333a6dbc048af3c1e7994a67b2173/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/google_maps_flutter/intermediates/res/merged/release/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/7a5333a6dbc048af3c1e7994a67b2173/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/Users/okanoz/Documents/EqProjects/turkey_earthquake/build/google_maps_flutter/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/okanoz/.gradle/caches/transforms-2/files-2.1/7a5333a6dbc048af3c1e7994a67b2173/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_text_light.xml"
+    }
+]
