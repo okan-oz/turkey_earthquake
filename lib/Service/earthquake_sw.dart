@@ -8,7 +8,7 @@ import '../logger.dart';
 
 class EarthQuakeService {
   static final String _eqApiUrl =
-      "https://api.orhanaydogdu.com.tr/deprem/live.php";
+      "https://api.orhanaydogdu.com.tr/deprem/live.php1";
 
   static int _timeout = 10;
   static Future<List<EarthQuake>> GetEQList(List<Filter> fItems) async {

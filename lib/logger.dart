@@ -1,7 +1,7 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:super_logging/super_logging.dart' as logger;
 
 class Logger {
   static void recordError(dynamic e, StackTrace s, String customMessege) {
-    Crashlytics.instance.recordError(e, s, context: customMessege);
+    logger.recordError(e, s, context: customMessege);
   }
 }
