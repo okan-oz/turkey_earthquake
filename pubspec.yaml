@@ -28,10 +28,8 @@ dependencies:
   #google_maps_flutter: ^0.5.28+1 yakınlaştırnma ilgili problemi vardı.Geri alındı.
   firebase_analytics: ^5.0.11
   provider: ^4.1.2
-  #animations: ^1.0.0+5 eklendikten sonra sık sık servisten data getirdi
   share: ^0.6.4+3
   intl: ^0.16.1
-  
  
  
 dev_dependencies:
