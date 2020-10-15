@@ -31,8 +31,9 @@ dependencies:
   #animations: ^1.0.0+5 eklendikten sonra sık sık servisten data getirdi
   share: ^0.6.4+3
   intl: ^0.16.1
+  
  
-
+ 
 dev_dependencies:
   flutter_test:
     sdk: flutter
